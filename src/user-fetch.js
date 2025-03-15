@@ -15,10 +15,14 @@ function fetchData() {
 }
 
 function createUser(data) {
-    const resultsArray = [];
-    for (let i = 0; i < Object.keys(data).length; i++) {
-        resultsArray.push(Object.values(data)[i]);
-    }
-    const user = new User(...resultsArray);
-    container.append(JSON.stringify(user));
+    const user = new User(...Object.values(data));
+    displayUser(user);
+}
+
+function displayUser(user) {
+    Object.entries(user).forEach(([key, value]) => {
+        const div = document.createElement('div');
+        div.innerHTML = `<strong>${key.toUpperCase()}:</strong> ${value}`;
+        container.appendChild(div);
+    });
 }
