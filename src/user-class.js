@@ -1,4 +1,4 @@
-class User {
+export default class User {
     constructor(id, firstName, lastName, maidenName, age, gender, email, phone, username, password, birthDate, image, bloodGroup, height, weight, eyeColor, hair = {}, ip, address, macAddress, university, bank = {}, company = {}, ein, ssn, userAgent, crypto = {}, role) {
         this.id = id;
         this.firstName = firstName;
